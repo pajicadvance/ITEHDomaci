@@ -82,7 +82,7 @@ while ($gpuRow = $result->fetch_array()) {
                     CPU
                 </td>
                 <td>
-                    <select>
+                    <select class="select">
                         <?php
                         foreach ($cpuList as $cpu) {
                             foreach ($manufacturerList as $manufacturer) {
@@ -116,7 +116,7 @@ while ($gpuRow = $result->fetch_array()) {
                     Motherboard
                 </td>
                 <td>
-                    <select>
+                    <select class="select">
                     <?php
                         foreach ($motherboardList as $motherboard) {
                             foreach ($manufacturerList as $manufacturer) {
@@ -150,7 +150,7 @@ while ($gpuRow = $result->fetch_array()) {
                     RAM
                 </td>
                 <td>
-                    <select>
+                    <select class="select">
                     <?php
                         foreach ($ramList as $ram) {
                             foreach ($manufacturerList as $manufacturer) {
@@ -178,7 +178,7 @@ while ($gpuRow = $result->fetch_array()) {
                     GPU
                 </td>
                 <td>
-                    <select>
+                    <select class="select">
                     <?php
                         foreach ($gpuList as $gpu) {
                             foreach ($manufacturerList as $manufacturer) {
@@ -198,22 +198,26 @@ while ($gpuRow = $result->fetch_array()) {
         </tbody>
     </table>
 
-    <button onclick="toggleShow(this)">Add component</button>
-    <button>Remove component</button>
-    <button>Edit component</button>
-    <button>Fuck off</button>
+    <div class="buttonGroup">
+        <button onclick="toggleShow(document.getElementById('modal')); toggleShow(document.getElementById('backdrop'))">Add component</button>
+        <button>Remove component</button>
+        <button>Edit component</button>
+        <button>Fuck off</button>
+    </div>
 
-    <div class="backdrop"></div>
+    <div class="backdrop" id="backdrop"></div>
 
-    <div class="modal">
-        <button>CPU</button>
+    <div id="modal">
+        <div class="wrapper2">
+        <button onclick="toggleShowFlex(document.getElementById('wrapper')); toggleShow(document.getElementById('modal'))">CPU</button>
         <button>Motherboard</button>
         <button>RAM</button>
         <button>GPU</button>
+        </div>
     </div>
 
-    <div class="wrapper">
-    <form class="addCPUForm">
+    <div class="wrapper" id="wrapper">
+    <form class="addCPUForm" id="addCPUForm">
         <div class="FormGroup">
             <label class="FormLabel">ID:</label>
             <input type="number" name="cpuId" id="cpuId">
@@ -270,7 +274,7 @@ while ($gpuRow = $result->fetch_array()) {
             ?>
         </select>
         </div>
-        <button>Save component</button>
+        <button id="saveComponentButton" type="button" onclick="toggleShowFlex(document.getElementById('wrapper')); toggleShow(document.getElementById('backdrop'))">Save component</button>
     </form>
     <form class="addMotherboardForm">
 
@@ -283,4 +287,5 @@ while ($gpuRow = $result->fetch_array()) {
     </form>
     </div>
 </body>
+<script src="js/main.js"></script>
 </html>

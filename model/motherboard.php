@@ -6,18 +6,16 @@ class Motherboard {
     public $model;
     public $formFactor;
     public $socket_id;
-    public $chipset;
     public $memoryType_id;
     public $memorySlots;
     public $maxMemory;
 
-    public function __construct($id = null, $manufacturer_id = null, $model = null, $formFactor = null, $socket_id = null, $chipset = null, $memoryType_id = null, $memorySlots = null, $maxMemory = null) {
+    public function __construct($id = null, $manufacturer_id = null, $model = null, $formFactor = null, $socket_id = null, $memoryType_id = null, $memorySlots = null, $maxMemory = null) {
         $this->id = $id;
         $this->manufacturer_id = $manufacturer_id;
         $this->model = $model;
         $this->formFactor = $formFactor;
         $this->socket_id = $socket_id;
-        $this->chipset = $chipset;
         $this->memoryType_id = $memoryType_id;
         $this->memorySlots = $memorySlots;
         $this->maxMemory = $maxMemory;

@@ -1,4 +1,5 @@
 .backdrop {
+    display: none;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -7,15 +8,17 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     margin: 0;
     height: 100vh;
 }
 
-.modal {
-    position: absolute;
-    width: 250px;
-    height: 25px;
+#modal {
+    display: none;
     background-color: white;
 }
 
@@ -29,7 +32,19 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.wrapper2 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     top: 0;
@@ -51,4 +66,21 @@ form select {
 
 .FormLabel {
     width: 100px;
+}
+
+#modal button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#saveComponentButton {
+    margin-top: 10px;
+}
+
+.select {
+    width: 500px;
+}
+
+.buttonGroup {
+    margin-top: 20px;
 }
