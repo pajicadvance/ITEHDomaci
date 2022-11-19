@@ -1,0 +1,54 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+}
+
+.modal {
+    position: absolute;
+    width: 250px;
+    height: 25px;
+    background-color: white;
+}
+
+.addCPUForm {
+    padding: 2rem;
+    background-color: white;
+    
+}
+
+.wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+form select {
+    display: block;
+}
+
+.FormGroup {
+    display: flex;
+    margin-top: 10px;
+}
+
+.FormGroup:first-child {
+    margin-top: 0;
+}
+
+.FormLabel {
+    width: 100px;
+}

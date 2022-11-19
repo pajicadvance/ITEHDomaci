@@ -8,4 +8,10 @@ class MemoryType {
         $this->id = $id;
         $this->name = $name;
     }
+
+    public static function getAll(mysqli $conn)
+    {
+        $q = "SELECT * FROM memory_type";
+        return $conn->query($q);
+    }
 }

@@ -8,4 +8,10 @@ class Socket {
         $this->id = $id;
         $this->name = $name;
     }
+
+    public static function getAll(mysqli $conn)
+    {
+        $q = "SELECT * FROM socket";
+        return $conn->query($q);
+    }
 }
