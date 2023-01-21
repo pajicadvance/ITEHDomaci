@@ -24,8 +24,22 @@ body {
 
 .addCPUForm {
     padding: 2rem;
-    background-color: white;
-    
+    background-color: white;   
+}
+
+.addMotherboardForm {
+    padding: 2rem;
+    background-color: white;   
+}
+
+.addRAMForm {
+    padding: 2rem;
+    background-color: white;   
+}
+
+.addGPUForm {
+    padding: 2rem;
+    background-color: white;   
 }
 
 .wrapper {
