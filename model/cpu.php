@@ -26,4 +26,16 @@ class CPU {
         $q = "SELECT * FROM cpu";
         return $conn->query($q);
     }
+
+    public static function deleteById($id, mysqli $conn)
+    {
+        $q = "DELETE FROM cpu WHERE id=$id";
+        return $conn->query($q);
+    }
+
+    public static function add($id, $manufacturer_id, $model, $coreClock, $coreCount, $tdp, $socket_id, $memoryType_id, mysqli $conn)
+    {
+        $q = "INSERT INTO cpu(id, manufacturer_id, model, coreClock, coreCount, tdp, socket_id, memoryType_id) values($id, $manufacturer_id, '$model', $coreClock, $coreCount, $tdp, $socket_id, $memoryType_id)";
+        return $conn->query($q);
+    }
 }

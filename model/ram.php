@@ -24,4 +24,16 @@ class RAM {
         $q = "SELECT * FROM ram";
         return $conn->query($q);
     }
+
+    public static function deleteById($id, mysqli $conn)
+    {
+        $q = "DELETE FROM ram WHERE id=$id";
+        return $conn->query($q);
+    }
+
+    public static function add($id, $manufacturer_id, $model, $memory, $modules, $memorySpeed, $memoryType_id, mysqli $conn)
+    {
+        $q = "INSERT INTO ram(id, manufacturer_id, model, memory, modules, memorySpeed, memoryType_id) values($id, $manufacturer_id, '$model', $memory, $modules, $memorySpeed, $memoryType_id)";
+        return $conn->query($q);
+    }
 }

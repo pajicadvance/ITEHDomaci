@@ -26,4 +26,16 @@ class Motherboard {
         $q = "SELECT * FROM motherboard";
         return $conn->query($q);
     }
+
+    public static function deleteById($id, mysqli $conn)
+    {
+        $q = "DELETE FROM motherboard WHERE id=$id";
+        return $conn->query($q);
+    }
+
+    public static function add($id, $manufacturer_id, $model, $formFactor, $socket_id, $memoryType_id, $memorySlots, $maxMemory, mysqli $conn)
+    {
+        $q = "INSERT INTO motherboard(id, manufacturer_id, model, formFactor, socket_id, memoryType_id, memorySlots, maxMemory) values($id, $manufacturer_id, '$model', '$formFactor', $socket_id, $memoryType_id, $memorySlots, $maxMemory)";
+        return $conn->query($q);
+    }
 }

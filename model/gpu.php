@@ -24,4 +24,16 @@ class GPU {
         $q = "SELECT * FROM gpu";
         return $conn->query($q);
     }
+
+    public static function deleteById($id, mysqli $conn)
+    {
+        $q = "DELETE FROM gpu WHERE id=$id";
+        return $conn->query($q);
+    }
+
+    public static function add($id, $manufacturer_id, $model, $memory, $coreClock, $memoryClock, $tdp, mysqli $conn)
+    {
+        $q = "INSERT INTO gpu(id, manufacturer_id, model, memory, coreClock, memoryClock, tdp) values($id, $manufacturer_id, '$model', $memory, $coreClock, $memoryClock, $tdp)";
+        return $conn->query($q);
+    }
 }
